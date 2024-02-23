@@ -36,3 +36,15 @@ Composition is the term used to describe expressions that can be the result of a
 The `+-/*` symbols are called **operators**. The expression on the left or right of an operator is called an **operand**. A operator sitting on te middle of two operands is called a **binary operator**.
 
 A way to understand expressions is to think about languages and their syntax. In the English language we have values (words), expressions (sentences) and symbols (letters). Expressions are formed of symbols and values.
+
+**Syntactic Checking**: Validate if the program respects the language syntax (e.g., `a = 3 \ 3` fails synthatic check because `\` is not a valid operator)
+
+**Semantic Checking**: Validate if the program makes sense (e.g., `a = 3 + ""` passes synthatic check, but fails semantic because it doesn't make sense to add a number with a string)
+
+**Type Checking**: Evaluates expressions from their leaf nodes up to the root node to understand if the expression types are semantically correct.
+
+![](https://raw.githubusercontent.com/freitzzz/cinderela/master/blog/general/fp/type-checking-ast.jpeg)
+
+**Static Typing vs Dynamic Typing**: In static typed languages, the compiler performs **syntactic** and **semantic** checks, whereas dynamic typed languages only perform **syntactic** checks.
+
+**Interpreted vs Compiled Languages**: In interpreted languages, expressions are evaluated at runtime (on the fly), whereas in compiled languages, expressions are evaluated at compile time when translating to bytecode (if running on a VM) or native code (CPU).
