@@ -1,7 +1,3 @@
-# the-art-of-functional-programming
-
-![](https://m.media-amazon.com/images/I/61oDqMnuCoL._SY522_.jpg)
-
 > Title: The Art of Functional Programming
 >
 > Author: Minh Quang Tran, PhD
@@ -9,6 +5,8 @@
 > Link: https://www.amazon.es/dp/3000735348?psc=1&ref=ppx_yo2ov_dt_b_product_details
 >
 > Functional programming is a powerful and elegant programming paradigm. Initially only popular among university researchers, it’s gained much traction in the software industry in the last few years. From big companies to start-ups, engineers and managers have realized that functional programming excels at abstraction and composition. Functional programming allows for highly concise solutions with increased safety. This has led to rising demand for software engineers with functional programming skills. This book will help you move your programming skills to the next level.
+
+<p align="center"><img src="https://m.media-amazon.com/images/I/61oDqMnuCoL._SY522_.jpg" alt="book cover" style="width: 15%"></p>
 
 ## Notes
 

@@ -37,5 +37,5 @@ done
 
 if [[ ! -z $(git -C "$script_dir_path" status --porcelain) ]];
 then
-    (cd "script_dir_path"; git add .; git commit -m "sync: flatnotes"; git push)
+    (cd "$script_dir_path"; git add .; git commit -m "sync: flatnotes"; git push)
 fi
