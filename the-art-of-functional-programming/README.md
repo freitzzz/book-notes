@@ -43,7 +43,7 @@ A way to understand expressions is to think about languages and their syntax. In
 
 **Type Checking**: Evaluates expressions from their leaf nodes up to the root node to understand if the expression types are semantically correct.
 
-![](https://raw.githubusercontent.com/freitzzz/cinderela/master/blog/general/fp/type-checking-ast.jpeg)
+<p align="center"><img src="https://raw.githubusercontent.com/freitzzz/cinderela/master/blog/general/fp/type-checking-ast.jpeg" alt="abstract syntax tree formed to check root nodes types" style="width: 30%;"></p>
 
 **Static Typing vs Dynamic Typing**: In static typed languages, the compiler performs **syntactic** and **semantic** checks, whereas dynamic typed languages only perform **syntactic** checks.
 
