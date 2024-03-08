@@ -85,3 +85,14 @@ Quiz
 - Q6: Choice B) (last expression evaluates to boolean)
 - Q7: Choice B) (local named expression a evaluates to 1 and then b to 2, but the scoped named expression a evaluates to 42)
 - Q8: Choice A) (In Java an if conditional is a statement and not an expression)
+
+
+### Chapter 3
+
+Lambda calculus is the theoretical foundation of functional programming. It defines an expression with one input that maps to an output. These expressions are called lambda expressions and can be specified in three scenarios:
+
+- Declaring a name for a value (variable) (e.g., `let x = 2`)
+- Declaring a function that uses an expression (e.g., `let y = 2 * x`)
+- Declaring a function that receives an expression and maps to an expression (e.g., `let z = y`)
+
+When evaluating a lambda expressions, these need
