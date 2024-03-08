@@ -16,7 +16,9 @@ Imperative programming influence can be attributed to the Von Neumann computing 
 
 Functional programming popularity thanks to the increase of declarative languages/technologies (e.g., HTML, Flutter, Swift UI, JetPack Compose) adoption to build modern frontend products.
 
-Quiz:
+---
+
+Quiz
 
 - Q1: Choice A) (influence of Von Neumann architecture)
 - Q2: Choice A) and B) (microservices is an architecture style, not a programming paradigm)
@@ -46,3 +48,34 @@ A way to understand expressions is to think about languages and their syntax. In
 **Static Typing vs Dynamic Typing**: In static typed languages, the compiler performs **syntactic** and **semantic** checks, whereas dynamic typed languages only perform **syntactic** checks.
 
 **Interpreted vs Compiled Languages**: In interpreted languages, expressions are evaluated at runtime (on the fly), whereas in compiled languages, expressions are evaluated at compile time when translating to bytecode (if running on a VM) or native code (CPU).
+
+**Named Expressions (aka function names)**: In Functional Programming there isn't the concept of variable names. Instead, named variables become expressions. In OCaml, this is achieved using the `let` keyword (e.g., `let pi = 3.14`, can now be used inan expression (`let circle_area = let radius = 2.0 in pi * radius * radius`))
+
+---
+
+Programming Challenges
+
+Challenge 1)
+
+```ocaml
+let x = 10
+let y = 2
+let z = 5
+
+let max_number = let m = if x > y then x else y in if m > z then m else z
+```
+
+Challenge 2)
+
+```ocaml
+let x = -10
+
+let abs = let a = x in if x < 0 then -x else a
+```
+
+---
+
+Quiz
+
+- Q1: Choice B) and C) (only expression names exist, recursion replaces loops)
+- Q2: 
