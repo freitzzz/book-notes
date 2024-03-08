@@ -1,0 +1,1 @@
+*/10 * * * * bash -ic "sync_book_notes"

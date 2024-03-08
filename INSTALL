@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+alias_source=~/.bash_aliases
+source $alias_source
+
+alias sync_book_notes="exec $(pwd)/sync.sh ~/Documents/notes"
+
+alias > $alias_source
+
+({ crontab -l; cat cronfile; } | awk '!x[$0]++' | crontab - ) &> /dev/null
