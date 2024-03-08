@@ -22,7 +22,7 @@ do
         continue;
     fi
 
-    reverse_synched_file="$reverse_synched_dir_path/'$title'.md"
+    reverse_synched_file="$reverse_synched_dir_path/$title.md"
 
     if [[ ! -f "$reverse_synched_file" ]];
     then
@@ -34,3 +34,8 @@ do
     echo "Reverse synching book $title... ($reverse_synched_file > $file)"
     rsync "$reverse_synched_file" $file
 done
+
+if [[ ! -z $(git -C "$script_dir_path" status --porcelain) ]];
+then
+    (cd "script_dir_path"; git add .; git commit -m "sync: flatnotes"; git push)
+fi
