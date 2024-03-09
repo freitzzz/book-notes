@@ -96,3 +96,5 @@ Lambda calculus is the theoretical foundation of functional programming. It defi
 - Declaring a function that receives an expression and maps to an expression (e.g., `let z = y`)
 
 When evaluating a lambda expressions, these need to be reduced. Reduceable expressions are called **redex**.
+
+Expressions can be reduced in two ways: evaluate the right expression or replace the left expression with the right expression.
