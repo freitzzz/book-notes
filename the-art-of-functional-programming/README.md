@@ -97,4 +97,5 @@ Lambda calculus is the theoretical foundation of functional programming. It defi
 
 When evaluating a lambda expressions, these need to be reduced. Reduceable expressions are called **redex**.
 
-Expressions can be reduced in two ways: evaluate the right expression or replace the left expression with the right expression.
+Expressions can be reduced in two ways: evaluate the right expression or replace the left expression with the right expression. The former technique is called **call-by-value**, where the latter is **call-by-reference**.
+Usually they will resolve the same value, but in scenarios where an expression can’t be fully reduced, call-by-reference can’t be applied (since the expression can’t be resolved).
