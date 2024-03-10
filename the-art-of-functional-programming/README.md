@@ -151,3 +151,32 @@ let sum = fun n -> let s = fun x -> x + 1 in summation n s 0
 ```
 
 <p align="center"><img src="https://raw.githubusercontent.com/freitzzz/cinderela/master/blog/general/fp/function-abstraction.png" alt="hierarchy of functions" style="width: 60%;"></p>
+
+---
+
+Programming Challenges
+
+Challenge 1)
+
+```ocaml
+let is_prime = fun x -> let rec tail_is_prime = fun x y -> if y = 1 then true else if x mod y = 0 then false else tail_is_prime (x) (y - 1) in if x < 2 then false else tail_is_prime (x) (x-1)
+```
+
+Challenge 2)
+
+```ocaml
+let last_fib = fun n -> let tail_last_fib = fun p c m -> if c > m then p else if c = m then c else tail_last_fib (p) (p + c) m in if n <= 0 then n else tail_last_fib 1 1 n
+```
+
+***
+
+Quiz
+
+* Q1: Choice B) and C) (only expression names exist, recursion replaces loops)
+* Q2: Choice A) (the = operator acts as an equality operator after an expression has been named)
+* Q3: Choice B) (syntax errors occur when the compiler doesn't recognize a symbol as part of the language syntax. In this case, there is no symbol that isn't part of the language. Furthermore, the expression tries to evaluate two different types, string and int, which is not allowed in OCaml)
+* Q4: Choice A) (expression names can't start with numbers in OCaml)
+* Q5: Choice B) (the conditional expression evaluates to even)
+* Q6: Choice B) (last expression evaluates to boolean)
+* Q7: Choice B) (local named expression a evaluates to 1 and then b to 2, but the scoped named expression a evaluates to 42)
+* Q8: Choice A) (In Java an if conditional is a statement and not an expression)
