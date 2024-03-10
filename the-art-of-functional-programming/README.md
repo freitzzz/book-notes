@@ -99,11 +99,11 @@ Usually they will resolve the same value, but in scenarios where an expression c
 
 Call by name is available in **non-strict** languages (e.g., Haskell), whereas call by value is available in **strict** languages (e.g., OCaml).
 
-<strong>”Functions are first class citizens”</strong>: this means that functions can be applied to everything (declarations, applications, operations (+-\*/), etc).
+**”Functions are first class citizens”**: this means that functions can be applied to everything (declarations, applications, operations (+-\*/), etc).
 
-<strong>Higher Order Functions</strong>: also know as HoF, is a primitive from lambda calculus that enables passing functions as parameters of a function.
+**Higher Order Functions**: also know as HoF, is a primitive from lambda calculus that enables passing functions as parameters of a function.
 
-<strong>Currying</strong>: the technique of partly applying functions on a function. This is achieved using higher order functions, by applying a function to one of the arguments. For example:
+**Currying** the technique of partly applying functions on a function. This is achieved using higher order functions, by applying a function to one of the arguments. For example:
 
 ```ocaml
 let product = fun x y -> x * y
@@ -111,3 +111,19 @@ let double = product 2
 ```
 
 We define a function that computes the product of a number and then create function to compute the double of a number, by partially applying the product function to value 2.
+
+**Recursive Functions**: the only way to achieve loops in functional programming is by recursively applying a function until a desired result is met.
+
+```ocaml
+let rec sum = fun n -> if n <= 0 then n else n + sum (n-1)
+```
+
+The example above describes the summation of numbers from 0 to `n`, something we would achieve with a `for loop` in imperative languages.
+
+**Tail Recursive Functions**: Recursive functions enable loops but have a counterpart. Each function invocation results in pushing a **temporary value** in the program stack, so that it can later be used to **evaluate** the expression. A program stack can only handle so many values, and once reaching its limits, the program ends with **Stack Overflow** error.
+
+Tail recursive functions solve this issue by **fully evaluating **the expression without pushing temporary values in the program stack.
+
+```ocaml
+let rec sum_tail = fun n r -> if n <= 0 then r else sum_tail (n-1) (r + n)
+``` 
