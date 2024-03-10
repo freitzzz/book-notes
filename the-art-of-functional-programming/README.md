@@ -6,7 +6,7 @@
 > 
 > Functional programming is a powerful and elegant programming paradigm. Initially only popular among university researchers, it’s gained much traction in the software industry in the last few years. From big companies to start-ups, engineers and managers have realized that functional programming excels at abstraction and composition. Functional programming allows for highly concise solutions with increased safety. This has led to rising demand for software engineers with functional programming skills. This book will help you move your programming skills to the next level.
 
-<img src="https://m.media-amazon.com/images/I/61oDqMnuCoL._SY522_.jpg" alt="book cover">
+<p align="center"><img src="https://m.media-amazon.com/images/I/61oDqMnuCoL._SY522_.jpg" alt="book cover" style="width: 15%"></p>
 
 ## Notes
 
@@ -42,7 +42,7 @@ A way to understand expressions is to think about languages and their syntax. In
 <strong>Semantic Checking</strong>: Validate if the program makes sense (e.g., `a = 3 + ""` passes synthatic check, but fails semantic because it doesn't make sense to add a number with a string)
 
 <strong>Type Checking</strong>: Evaluates expressions from their leaf nodes up to the root node to understand if the expression types are semantically correct.
-<img src="https://raw.githubusercontent.com/freitzzz/cinderela/master/blog/general/fp/type-checking-ast.jpeg" alt="abstract syntax tree formed to check root nodes types">
+<p align="center"><img src="https://raw.githubusercontent.com/freitzzz/cinderela/master/blog/general/fp/type-checking-ast.jpeg" alt="abstract syntax tree formed to check root nodes types" style="width: 30%;"></p>
 <strong>Static Typing vs Dynamic Typing</strong>: In static typed languages, the compiler performs **syntactic** and **semantic** checks, whereas dynamic typed languages only perform **syntactic** checks.
 
 <strong>Interpreted vs Compiled Languages</strong>: In interpreted languages, expressions are evaluated at runtime (on the fly), whereas in compiled languages, expressions are evaluated at compile time when translating to bytecode (if running on a VM) or native code (CPU).
@@ -149,3 +149,5 @@ sum_tail 3 0
 let rec summation = fun n e r -> if n <= 0 then r else summation (n-1) e (e r)
 let sum = fun n -> let s = fun x -> x + 1 in summation n s 0
 ```
+
+<p align="center"><img src="https://raw.githubusercontent.com/freitzzz/cinderela/master/blog/general/fp/function-abstraction.png" alt="hierarchy of functions" style="width: 60%;"></p>
