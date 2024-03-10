@@ -146,5 +146,6 @@ sum_tail 3 0
 **Function Abstraction**: Just like in Object Oriented paradigm, there is also abstraction in the functional paradigm. Abstraction means abstracting a known domain (expressing what is known). In the functional paradigm, abstraction is achieved with **HoF**.
 
 ```ocaml
-let rec summation = fun n e r -> if n <= 0 then r else summation (n-1) e (r + n)
+let rec summation = fun n e r -> if n <= 0 then r else summation (n-1) e (e r)
+let sum = fun n -> let s = fun x -> x + 1 in summation n s 0
 ```
