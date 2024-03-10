@@ -97,8 +97,21 @@ Lambda calculus is the theoretical foundation of functional programming. It defi
 
 When evaluating lambda expressions, these need to be reduced. Reduceable expressions are called **redex**.
 
-Expressions can be reduced in two ways: evaluate the right expression or replace the left expression with the right expression. The former technique is called **call-by-value**, where the latter is **call-by-reference**.
+Expressions can be reduced in two ways: evaluate the right expression or replace the left expression with the right expression. The former technique is called **call-by-value**, where the latter is **call-by-name** (or call by reference).
 Usually they will resolve the same value, but in scenarios where an expression can’t be fully reduced, call-by-reference can’t be applied (since the expression can’t be resolved).
 
-**”Functions are first class citizens”**: this means that functions can be applied to everything (declarations, applications, operations (+-*/), etc.
+Call by name is available in **non-strict** languages (e.g., Haskell), whereas call by value is available in **strict** languages (e.g., OCaml).
 
+**”Functions are first class citizens”**: this means that functions can be applied to everything (declarations, applications, operations (+-*/), etc).
+
+**Higher Order Functions**: also know as HoF, is a primitive from lambda calculus that enables passing functions as parameters of a function.
+
+**Currying**: the technique of partly applying functions on a function. This is achieved using higher order functions, by applying a function to one of the arguments. For example:
+
+```ocaml
+let power = x ** n
+let square = power x*x 2
+let cube = power x*x 3
+```
+
+We define a function that computes the power of number and then create functions to compute the square and cube of a number, by partially applying the power function.
