@@ -101,7 +101,7 @@ Call by name is available in **non-strict** languages (e.g., Haskell), whereas c
 
 **”Functions are first class citizens”**: this means that functions can be applied to everything (declarations, applications, operations (+-\*/), etc).
 
-**Higher Order Functions**: also know as HoF, is a primitive from lambda calculus that enables passing functions as parameters of a function.
+**Higher Order Functions**: also know as *HoF*, is a primitive from lambda calculus that enables passing functions as parameters of a function.
 
 **Currying** the technique of partly applying functions on a function. This is achieved using higher order functions, by applying a function to one of the arguments. For example:
 
@@ -116,6 +116,15 @@ We define a function that computes the product of a number and then create funct
 
 ```ocaml
 let rec sum = fun n -> if n <= 0 then n else n + sum (n-1)
+
+sum 3
+= 3 + sum 2
+= 3 + (2 + sum 1)
+= 3 + (2 + (1 + sum 0))
+= 3 + (2 + (1 + 0))
+= 3 + (2 + 1)
+= 3 + 3
+= 6
 ```
 
 The example above describes the summation of numbers from 0 to `n`, something we would achieve with a `for loop` in imperative languages.
@@ -126,4 +135,16 @@ Tail recursive functions solve this issue by **fully evaluating **the expression
 
 ```ocaml
 let rec sum_tail = fun n r -> if n <= 0 then r else sum_tail (n-1) (r + n)
-``` 
+
+sum_tail 3 0
+= sum_tail 2 3
+= sum_tail 1 5
+= sum_tail 0 6
+= 6
+```
+
+**Function Abstraction**: Just like in Object Oriented paradigm, there is also abstraction in the functional paradigm. Abstraction means abstracting a known domain (expressing what is known). In the functional paradigm, abstraction is achieved with **HoF**.
+
+```ocaml
+let rec summation = fun n e r -> if n <= 0 then r else summation (n-1) e (r + n)
+```
