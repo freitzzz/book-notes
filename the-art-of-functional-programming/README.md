@@ -165,7 +165,7 @@ let is_prime = fun x -> let rec tail_is_prime = fun x y -> if y = 1 then true el
 Challenge 2)
 
 ```ocaml
-let last_fib = fun n -> let tail_last_fib = fun p c m -> if c > m then p else if c = m then c else tail_last_fib (p) (p + c) m in if n <= 0 then n else tail_last_fib 1 1 n
+let last_fib = fun n -> let rec tail_last_fib = fun p1 p2 c m -> if c >= m then p1 + p2 else tail_last_fib (c) (p2 + p1) (p1 + c) m in if n <= 0 then n else if n <= 2 then 1 else tail_last_fib 1 1 2 n;;
 ```
 
 ***
