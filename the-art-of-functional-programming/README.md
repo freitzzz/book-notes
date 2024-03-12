@@ -165,10 +165,38 @@ let is_prime = fun x -> let rec tail_is_prime = fun x y -> if y = 1 then true el
 Challenge 2)
 
 ```ocaml
-let last_fib = fun n -> let rec tail_last_fib = fun p1 p2 c m -> if c >= m then p1 + p2 else tail_last_fib (c) (p2 + p1) (p1 + c) m in if n <= 0 then n else if n <= 2 then 1 else tail_last_fib 1 1 2 n;;
+let last_fib = fun n -> 
+  let rec tail_last_fib = 
+    fun p1 p2 m -> 
+      if (p1 + p2) > m then p1 else tail_last_fib (p1 + p2) (p1) m 
+  in if n <= 0 then n else if n <= 2 then 1 else tail_last_fib 3 2 n
 ```
 
-***
+Challenge 3)
+
+```ocaml
+let fib = fun n -> 
+  let rec tail_fib = 
+    fun p1 p2 m -> 
+      if m = 0 then p1 else tail_fib (p1 + p2) (p1) (m - 1) 
+  in if n <= 0 then n else if n <= 2 then 1 else tail_fib 2 1 (n - 3)
+```
+
+Challenge 4)
+
+```ocaml
+let twice = fun f x -> f(f x)
+```
+
+Challenge 5)
+
+```ocaml
+let compose = fun f g -> fun x -> f(g(x))
+```
+
+Note: Since `compose` is denoted as `f(g(x))` and we need to pass a value `x` to function `g`, then `compose` must return a function that receives a value `x` a applies it as `f(g(x))`.
+
+---
 
 Quiz
 
