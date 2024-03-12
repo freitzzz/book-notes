@@ -196,6 +196,12 @@ let compose = fun f g -> fun x -> f(g(x))
 
 Note: Since `compose` is denoted as `f(g(x))` and we need to pass a value `x` to function `g`, then `compose` must return a function that receives a value `x` a applies it as `f(g(x))`.
 
+Challenge 6)
+
+```ocaml
+
+```
+
 ---
 
 Quiz
