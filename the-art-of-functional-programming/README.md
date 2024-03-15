@@ -131,7 +131,7 @@ The example above describes the summation of numbers from 0 to `n`, something we
 
 **Tail Recursive Functions**: Recursive functions enable loops but have a counterpart. Each function invocation results in pushing a **temporary value** in the program stack, so that it can later be used to **evaluate** the expression. A program stack can only handle so many values, and once reaching its limits, the program ends with **Stack Overflow** error.
 
-Tail recursive functions solve this issue by **fully evaluating **the expression without pushing temporary values in the program stack.
+Tail recursive functions solve this issue by **fully evaluating** the expression without pushing temporary values in the program stack.
 
 ```ocaml
 let rec sum_tail = fun n r -> if n <= 0 then r else sum_tail (n-1) (r + n)
@@ -199,7 +199,10 @@ Note: Since `compose` is denoted as `f(g(x))` and we need to pass a value `x` to
 Challenge 6)
 
 ```ocaml
-
+let rec filtered_accumulate = fun combiner init term pred m n -> 
+  if m > n then init 
+  else if (pred m) then combiner (term m) (filtered_accumulate combiner init term pred (m + 1) n)
+  else (filtered_accumulate combiner init term pred (m + 1) n)
 ```
 
 ---
