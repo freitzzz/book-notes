@@ -209,11 +209,14 @@ let rec filtered_accumulate = fun combiner init term pred m n ->
 
 Quiz
 
-* Q1: Choice B) and C) (only expression names exist, recursion replaces loops)
-* Q2: Choice A) (the = operator acts as an equality operator after an expression has been named)
-* Q3: Choice B) (syntax errors occur when the compiler doesn't recognize a symbol as part of the language syntax. In this case, there is no symbol that isn't part of the language. Furthermore, the expression tries to evaluate two different types, string and int, which is not allowed in OCaml)
-* Q4: Choice A) (expression names can't start with numbers in OCaml)
-* Q5: Choice B) (the conditional expression evaluates to even)
-* Q6: Choice B) (last expression evaluates to boolean)
-* Q7: Choice B) (local named expression a evaluates to 1 and then b to 2, but the scoped named expression a evaluates to 42)
-* Q8: Choice A) (In Java an if conditional is a statement and not an expression)
+* Q1: Choice A) `y` can't be evaluated on the left-hand expression, so the end result must end with `y`
+* Q2: Choice B) HoF enables passing functions as parameters, so one can abstract the function implementation by allowing multiple implementations that match a contract
+* Q3: Choice A) OCaml expression evaluation strategy is call by value, so it will first try to evaluate the failure
+* Q4: Choice B) It's an unary operator that returns another unary function
+* Q5: Choice A) It will never terminate since OCaml uses call by value strategy
+* Q6: Choice B)
+* Q7: Choice A) The function checks if the number is odd, and since 11 is an odd number, it evaluates to "it's true"
+* Q8: Choice B)
+
+### Chapter 4
+
