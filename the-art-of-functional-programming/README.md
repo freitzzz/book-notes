@@ -220,3 +220,10 @@ Quiz
 
 ### Chapter 4
 
+The **tuple** record is the primary compound data object we can use to construct data structures of two elements. Triplets can be written using two tuples (e.g., `(1, (2, 3))`).
+
+Using compound data objects enables **pattern matching**: the ability to deconstruct the object by matching possible values it can take.
+
+
+
+
