@@ -282,8 +282,44 @@ Programming Challenges
 Challenge 1)
 
 ```ocaml
-let longest_string = fun l -> let rec longest_string_search = fun ll r -> match ll with [] -> r | x :: xs -> if (length x) >= (length r) then longest_string_search xs x else longest_string_search xs r in match l with [] -> None | x :: xs -> longest_string_search xs x
+let longest_string = fun l -> 
+  let rec longest_string_search = 
+    fun ll r -> match ll with 
+      | [] -> r
+      | x :: xs -> if (String.length x) >= (String.length r) 
+          then longest_string_search xs x 
+          else longest_string_search xs r 
+  in match l with
+  | [] -> None 
+  | x :: xs -> Some (longest_string_search xs x);;
 ```
+
+Challenge 2)
+
+```ocaml
+let concat = fun s l -> 
+  let rec concat_cons = 
+    fun ll r -> match ll with 
+      | [] -> r
+      | x :: xs -> concat_cons xs (r ^ s ^ x)
+  in match l with
+  | [] -> ""
+  | x :: xs -> concat_cons xs x;;
+```
+
+Challenge 3)
+
+```ocaml
+let concat = fun s l -> 
+  let rec concat_cons = 
+    fun ll r -> match ll with 
+      | [] -> r
+      | x :: xs -> concat_cons xs (r ^ s ^ x)
+  in match l with
+  | [] -> ""
+  | x :: xs -> concat_cons xs x;;
+```
+
 ---
 
 Quiz
