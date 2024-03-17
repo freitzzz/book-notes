@@ -310,18 +310,55 @@ let concat = fun s l ->
 Challenge 3)
 
 ```ocaml
-let concat = fun s l -> 
-  let rec concat_cons = 
-    fun ll r -> match ll with 
-      | [] -> r
-      | x :: xs -> concat_cons xs (r ^ s ^ x)
-  in match l with
-  | [] -> ""
-  | x :: xs -> concat_cons xs x;;
+type 'a bin_tree = 
+  | Leaf
+  | Node of 'a bin_tree * 'a * 'a bin_tree;;
+
+let rec height t = match t with
+    | Leaf -> 0
+    | Node (l, _, r) -> 1 + max (height l) (height r)
+```
+
+Challenge 4)
+
+```ocaml
+type nat = Zero | Succ of nat;;
+
+let pred = fun n -> match n with
+    | Zero -> None
+    | Succ nat -> Some x;;
+```
+
+Challenge 5)
+
+```ocaml
+type nat = Zero | Succ of nat;;
+
+let nat_len = fun n -> let rec nat_len_rec = fun nn r -> match nn with 
+    | Zero -> r
+    | Succ (nat) -> nat_len_rec nat (r + 1)
+  in nat_len_rec n 0;;
+
+let nat_of = fun n -> let rec nat_of_rec = fun nn r -> 
+    if nn = 0
+    then r
+    else nat_of_rec (nn - 1) (Succ r) 
+  in nat_of_rec n Zero;; 
+
+let add = fun n1 n2 -> match (n1, n2) with
+  | (Zero, Zero) -> Zero
+  | (Zero, nat) -> nat
+  | (nat, Zero) -> nat
+  | (nat, nat2) -> nat_of ((nat_len nat) + (nat_len nat2));;
 ```
 
 ---
 
 Quiz
 
-* Q1: Choice A) `y` can't be evaluated on the left-hand expression, so the end result must end with `y`
+* Q1: Choice B) The triple is a product data type so it can have all values within types string, int, bool, meaning it can have an infinite number of values.
+* Q2:  Choice A) `mytype` can either be `True` | `False` | `Constant`
+* Q3: Choice A)
+* Q4: Choice B) Syntax error and OCaml data structures are immutable
+* Q5: Choice B)
+* Q6
