@@ -360,5 +360,7 @@ Quiz
 * Q2:  Choice A) `mytype` can either be `True` | `False` | `Constant`
 * Q3: Choice A)
 * Q4: Choice B) Syntax error and OCaml data structures are immutable
-* Q5: Choice B)
-* Q6
+* Q5: Choice B) Non-exhaustive pattern matching
+* Q6: Choice B)
+* Q7: Choice A)
+* Q8: Choice C)
