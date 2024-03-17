@@ -224,6 +224,68 @@ The **tuple** record is the primary compound data object we can use to construct
 
 Using compound data objects enables **pattern matching**: the ability to deconstruct the object by matching possible values it can take.
 
+```ocaml
+let point = (1, 2)
+let translate = fun p -> match p with | (x, y) -> ((x*2), (y*2))
+```
 
+Sequences and lists are also constructed with tuples. In OCaml these are defined with operator `::`, also known as `cons`. The first element is called **head**, and the last element of a list is always an empty list constructor (reads as nil `[]`), called **tail**:
 
+```ocaml
+let list1 = 1::(2::(3::[]))
+let list2 = [1; 2; 3;]
+```
 
+In OCaml lists are **linked lists** instead of indexable lists.
+
+Common list operations can be defined by pattern matching the head and tail of the list:
+
+```ocaml
+let rec length = fun l -> match l with
+    | [] -> 0
+    | hd :: tl -> 1 + length tl;;
+    
+let rec append = fun l1 l2 -> match l1 with
+    | [] -> l2
+    | x :: xs -> x :: append xs l2;;
+```
+
+Another powerful compound data objects are **Algebraic Data Types** (ADT).  These objects represent data structures that can represent all **combinations** of a type (e.g., `int * string` represents a tuple whose first element is `int` and last is `string`) and **alternations** of types (e.g., a list can be empty or a combination of a head and tail).
+
+Combination types are also known as a **product** types. Alternation types are also known as **sum** types (sum of all alternatives).
+
+To define an alternation we use the **pipe** operator (`|`):
+
+```ocaml
+type shape = Circle of float | Rectangle of float * float | ComplexShape of shape list
+```
+
+ADT also allows us to define **parameterized data types**, also known as **generic data types**:
+
+```ocaml
+type 'X bin_tree = Leaf | Node of 'X bin_tree * 'X * 'X bin_tree
+```
+
+The Option and Either data types can also be modeled with ADT:
+
+```ocaml
+type 'X option = None | Some of 'X;;
+type ('X, 'Y) either = Left of 'X | Right of 'Y;;
+
+let safe_div = fun a b -> if b = 0 then Left "Division by zero" else Right (a/b);;
+```
+
+---
+
+Programming Challenges
+
+Challenge 1)
+
+```ocaml
+let longest_string = fun l -> let rec longest_string_search = fun ll r -> match ll with [] -> r | x :: xs -> if (length x) >= (length r) then longest_string_search xs x else longest_string_search xs r in match l with [] -> None | x :: xs -> longest_string_search xs x
+```
+---
+
+Quiz
+
+* Q1: Choice A) `y` can't be evaluated on the left-hand expression, so the end result must end with `y`
